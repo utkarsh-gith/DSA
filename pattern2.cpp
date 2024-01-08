@@ -21,3 +21,4 @@ int main()
     cout<<endl;
     return 0;
 }
+//can also creat variable count and run i=1 to n, j=1 to n, and increment count 
