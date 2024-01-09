@@ -9,13 +9,12 @@ int main()
     cout<<endl;
     while(i<=n)
     {
-        int j=1;
-        int count=i;
-        while(j<=i)
+        int j=i;
+
+        while(j>=1)
         {
-            cout<<count<<"\t"; 
-            count++;
-            j++;
+            cout<<j<<"\t"; 
+            j--;
         }
         cout<<endl;
         i++;
@@ -34,6 +33,9 @@ int main()
 #include<iostream>
 using namespace std;
 
+#include<iostream>
+using namespace std;
+
 int main()
 {
     int n,i=1;
@@ -43,11 +45,10 @@ int main()
     while(i<=n)
     {
         int j=1;
-        int count=i;
+
         while(j<=i)
         {
-            cout<<count<<"\t"; 
-            count--;
+            cout<<i-j+1<<"\t"; 
             j++;
         }
         cout<<endl;
