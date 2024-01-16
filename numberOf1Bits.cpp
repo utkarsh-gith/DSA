@@ -18,7 +18,16 @@ int main()
     cout<<"Number of 1 Bits:"<<s<<endl;
 }
 
+or
 
+/*
+int result = 0;
+        while (n) {
+            result += (n & 1u);
+            n >>= 1;
+        }    
+        return result;
+*/
 /*
 Enter the number to be checked:11
 Number of 1 Bits:3
