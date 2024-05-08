@@ -24,7 +24,7 @@ int getMax(int arr[],int n)
     for(int i=0;i<n;i++)
     {
         max_ele=max(max_ele,arr[i]);
-        // if(arr[i]>max)
+        // if(arr[i]>max)  
         //     max=arr[i];
     }
     return max_ele;
@@ -36,7 +36,7 @@ int getMin(int arr[],int n)
     for(int i=0;i<n;i++)
     {
         min_ele=min(min_ele,arr[i]);
-        // if(arr[i]<min)
+        // if(arr[i]<min)  
         //     min=arr[i];
     }
     return min_ele;
