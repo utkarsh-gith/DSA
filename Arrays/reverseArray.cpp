@@ -28,7 +28,6 @@ void create(int arr[],int n)
 
 void display(int arr[],int n)
 {
-    cout<<endl<<"Array Elements:"<<endl;
     for(int i=0;i<n;i++)
         cout<<arr[i]<<"\t";
     cout<<endl;
@@ -40,8 +39,10 @@ int main()
     cout<<endl<<endl<<"Enter array size: ";
     cin>>n;
     create(arr,n);
+    cout<<endl<<"Array Elements:"<<endl;
     display(arr,n);
     reverse(arr,n);
+    cout<<endl<<"Reversed Array Elements:"<<endl;
     display(arr,n);
     return 0;
 }
