@@ -4,49 +4,74 @@ using namespace std;
 class Node {
     public:
         int data;
+        Node *prev;
         Node *next;
-    Node(int data){
-        this->data = data;
-        this->next = NULL;
-    }
+
+        Node(int data){
+           this->data = data;
+           this->next = this->prev = NULL;
+        }
 };
+
+int getLength(Node *head){
+    int c=0;
+    while(head!=NULL){
+        c++;
+        head=head->next;
+    }
+    return c;
+}
 
 void insertAtHead(Node * &head,int d){
     Node *newNode = new Node(d);
-    newNode->next = head;
-    head = newNode;
+    if(head==NULL){
+        head=newNode;
+    }
+    else{
+        newNode ->next = head;
+        head->prev = newNode;
+        head = newNode;
+    }
 }
-void insertAtTail(Node * &head,int d){
-    Node *newNode = new Node(d);
-    Node *temp = head;
-    if(temp==NULL){
+void insertAtTail(Node *&head,int d){
+    if(head==NULL){
         insertAtHead(head,d);
     }
     else{
-        while(temp->next!=NULL){
-            temp = temp->next;
+        Node *newNode = new Node(d);
+        Node *temp = head;
+        while(temp->next!=0){
+            temp=temp->next;
         }
         temp->next = newNode;
+        newNode->prev = temp;
+        newNode->next = NULL;
     }
 }
 void insertAtPos(Node * &head,int d,int pos){
     if(pos==1){
         insertAtHead(head,d);
     }
+    else if(pos==getLength(head)+1){
+        insertAtTail(head,d);
+    }
+    else if(pos>getLength(head)+1){
+        cout<<"Invalid Position"<<endl;
+    }
     else{
         Node *newNode = new Node(d);
-        Node *temp = head;
-        int count = 1;
-        while(count<pos-1 && temp->next!=NULL){
-            temp=temp->next;
-            count++;
+        Node *current = head;
+        Node *prev = head;
+        int c = 1;
+        while(c!=pos && current->next!=NULL){
+            c++;
+            prev=current;
+            current=current->next;
         }
-        if(count<pos-1)
-            cout<<"Invalid Position"<<endl;
-        else{
-            newNode->next=temp->next;
-            temp->next=newNode;
-        }
+        newNode->next=current;
+        newNode->prev=prev;
+        prev->next=newNode;
+        current->prev=newNode;
     }
 }
 
@@ -54,10 +79,15 @@ void deleteAtHead(Node * &head){
     if(head==NULL){
         cout<<"Empty List"<<endl;
     }
+    else if(head->next==NULL){
+        cout<<"Element Deleted = "<<head->data<<endl;
+        head=NULL;
+    }
     else{
-        Node *temp =head;
-        cout<<"Deleted element = "<<head->data<<endl;
-        head=head->next;
+        Node *temp = head;
+        head = head->next;
+        head->prev = NULL;
+        cout<<"Deleted element = "<<temp->data<<endl;
         delete(temp);
     }
 }
@@ -70,15 +100,14 @@ void deleteAtTail(Node * &head){
         head=NULL;
     }
     else{
-        Node *temp = head;
+        Node *current = head;
         Node *prev = head;
-        while(temp->next!=NULL){
-            prev=temp;
-            temp=temp->next;
+        while(current->next!=NULL){
+            prev=current;
+            current=current->next;
         }
-        cout<<"Element Deleted = "<<temp->data<<endl;
         prev->next=NULL;
-        delete(temp);
+        delete(current);
     }
 }
 void deleteAtPos(Node * &head,int pos){
@@ -88,35 +117,37 @@ void deleteAtPos(Node * &head,int pos){
     else if(pos==1){
         deleteAtHead(head);
     }
+    else if(pos>getLength(head)){
+        cout<<"Invalid Postion"<<endl;
+    }
+    else if(pos==getLength(head)){
+        deleteAtTail(head);
+    }
     else{
         Node *current = head;
         Node *prev = head;
         int c=1;
-        while(c<pos && current->next!=NULL){
-            prev = current;
-            current = current->next;
+        while(c!=pos){
+            prev=current;
+            current=current->next;
             c++;
         }
-            if(c!=pos){
-                cout<<"Invalid Position"<<endl;
-            }
-            else{
-                cout<<"Elemnt Deleted = "<<current->data;
-                prev->next=current->next;
-                delete(current);
-            }
+        cout<<"Element Deleted = "<<current->data<<endl;
+        current->next->prev=prev;
+        prev->next=current->next;
+        delete(current);
     }
 }
 
-void print(Node * &head){
-    Node *temp = head;
-    cout<<endl<<"Linked list elements:"<<endl;
-    while(temp!=NULL){
-        cout<<temp->data<<"\t";
-        temp = temp->next;
+void print(Node *head){
+    cout<<"Linked List Elements: "<<endl;
+    while(head!=NULL){
+        cout<<head->data<<"\t";
+        head=head->next;
     }
-    cout<<endl; 
+    cout<<endl;
 }
+
 
 int main(){
     Node *head = NULL;
@@ -125,7 +156,7 @@ int main(){
         cout<<endl<<"Choose Options:"<<endl;
         cout<<"1. Insert at Head  2. Insert at End  3. Insert at Pos  "<<endl;;
         cout<<"4. Delete at Head  5. Delete at End  6. Delete at Pos  "<<endl;
-        cout<<"7.Print  8.Exit"<<endl;
+        cout<<"7.Print  8.Length  9.Exit"<<endl;
         cout<<"Choice: ";
         cin>>n;
         switch(n){
@@ -153,7 +184,9 @@ int main(){
                     break;  
             case 7: print(head);
                     break;
-            case 8: exit(0);
+            case 8: cout<<"Length of Doubly Linked list: "<<getLength(head)<<endl;
+                    break;
+            case 9: exit(0);
             default: cout<<"Invalid Choice"<<endl;
         }
     }
