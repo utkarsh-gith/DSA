@@ -7,7 +7,7 @@ class Graph {
 private:
     int V;
     vector<vector<int> > adjMatrix; //2D Matrix
-
+    
 public:
     Graph(int vertices) : V(vertices) {
         adjMatrix.resize(V, vector<int>(V, 0));

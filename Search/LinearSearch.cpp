@@ -1,36 +1,42 @@
 #include<iostream>
+#include<cstdlib>
+#include<ctime>
 using namespace std;
 
-int linearSearch(int arr[],int n,int target)
-{
-    for(int i=0;i<n;i++)
-    {
-        if(arr[i]==target)
+void printArray(int *arr,int n){
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<"\t";
+    }
+    cout<<endl;
+}
+int linearSearch(int *arr,int n, int ele){
+    for(int i = 0;i < n;i++){
+        if(arr[i] == ele)
             return i;
     }
     return -1;
 }
 
-void create(int arr[],int n)
-{
-    
-    cout<<endl<<"Enter array elements: "<<endl;
-    for(int i=0;i<n;i++)
-        cin>>arr[i];
-}
-
-int main()
-{
-    int arr[20],n,key;
-    cout<<endl<<endl<<"Enter array size: ";
+int main(){
+    int n,ele,h=100,l=0;
+    cout<<endl<<"Enter size of array: ";
     cin>>n;
-    create(arr,n);
+    int *arr = new int[n];
+    clock_t start,end;
+    for(int i=0;i<n;i++){
+        arr[i] = rand()%(h-l+1);
+    }
     cout<<"Enter element to be searched: ";
-    cin>>key;
-    int search = linearSearch(arr,n,key);
-    if(search==-1)
-        cout<<endl<<key<<" not found"<<endl<<endl;
-    else
-        cout<<endl<<key<<" found at index "<<search<<endl<<endl;
-    return 0;
+    cin>>ele;
+    printArray(arr,n);
+    start = clock();
+    int res = linearSearch(arr,n,ele);
+    if(res == -1)
+        cout<<ele<<" not found"<<endl;
+    else    
+        cout<<ele<<" found at index "<<res<<endl;
+    end= clock();
+    double t;
+    t = ((end-start)*1000000)/CLOCKS_PER_SEC;
+    cout<<"Time taken: "<<t<<" micro second"<<endl<<endl;
 }
