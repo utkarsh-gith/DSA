@@ -1,3 +1,9 @@
+// Space Complexity - O(1)
+// Time Complexity - Best Case: O(n )
+//                 - Worst Case: O(n^2)
+//Adaptable
+//Stable
+
 #include<iostream>
 #include<cstdlib>
 #include<vector>

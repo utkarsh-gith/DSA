@@ -1,3 +1,9 @@
+// Space Complexity - O(1)
+// Time Complexity - Best Case: O(n^2)
+//                 - Worst Case: O(n^2)
+//Use Case - usable only for small set of elements
+
+
 #include<iostream>
 #include<cstdlib>
 #include<vector>
@@ -28,7 +34,7 @@ void selectionSort(vector<int>& nums){
             if(nums[j] < nums[minIndex]){
                 minIndex = j;
             }
-            
+
         }
         swap(nums[i],nums[minIndex]);
     }
