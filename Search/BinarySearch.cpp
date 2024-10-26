@@ -24,18 +24,20 @@ int iBinarySearch(vector<int> num, int n, int ele){
 }
 
 int rBinarySearch(vector<int> num, int low, int high ,int ele){
-    if(low<=high){
-        int mid =  low + (high - low)/2;
-        if(num[mid] == ele)
-            return mid;
-        else if(num[mid] < ele){
-            return rBinarySearch(num,mid+1,high,ele);
-        }
-        else{
-            return rBinarySearch(num,low,mid-1,ele);
-        }
+    if(low>high){
+        return -1;
     }
-    return -1;
+
+    int mid =  low + (high - low)/2;
+    if(num[mid] == ele)
+        return mid;
+    else if(num[mid] < ele){
+        return rBinarySearch(num,mid+1,high,ele);
+    }
+    else{
+        return rBinarySearch(num,low,mid-1,ele);
+    }
+    
 }
 
 int main(){
