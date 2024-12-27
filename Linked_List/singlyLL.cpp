@@ -101,7 +101,7 @@ void deleteAtPos(Node * &head,int pos){
                 cout<<"Invalid Position"<<endl;
             }
             else{
-                cout<<"Elemnt Deleted = "<<current->data;
+                cout<<"Element Deleted = "<<current->data;
                 prev->next=current->next;
                 delete(current);
             }
