@@ -18,7 +18,7 @@ public:
     }
 };
 
-class binarySreachTree
+class binarySearchTree
 {
 
 public:
@@ -46,8 +46,7 @@ public:
 
     void insertNode(Node *&root)
     {
-        cout << endl
-             << "Enter data: ";
+        cout << "Enter data (end with -1): ";
         int data;
         cin >> data;
 
@@ -149,22 +148,116 @@ public:
         }
         cout << root->data << "\t";
     }
+
+    Node *maxVal(Node *root)
+    {
+        while (root && root->right)
+        {
+            root = root->right;
+        }
+        return root;
+    }
+    Node *minVal(Node *root)
+    {
+        while (root && root->left)
+        {
+            root = root->left;
+        }
+        return root;
+    }
+
+    Node *deleteNode(Node *root, int val)
+    {
+        if (root == NULL)
+        {
+            return root;
+        }
+
+        if (root->data < val)
+        {
+            root->right = deleteNode(root->right, val);
+        }
+        else if (root->data > val)
+        {
+            root->left = deleteNode(root->left, val);
+        }
+        else
+        {
+            // 0 child
+            if (root->left == NULL && root->right == NULL)
+            {
+                delete (root);
+                return NULL;
+            }
+
+            // 1 child
+            if (root->right == NULL)
+            {
+                Node *temp = root;
+                delete (root);
+                return temp;
+            }
+            if (root->left == NULL)
+            {
+                Node *temp = root->right;
+                delete (root);
+                return temp;
+            }
+
+            // 2 child
+            Node *temp = minVal(root->right);
+            root->data = temp->data;
+            root->right = deleteNode(root->right, temp->data);
+        }
+        return root;
+    }
+
+    void del(Node *&root)
+    {
+
+        cout << "Enter node to be deleted (end with -1): ";
+        int val;
+        cin >> val;
+
+        while (val != -1)
+        {
+            root = deleteNode(root, val);
+            cout << "Enter node to be deleted (end with -1): ";
+            cin >> val;
+        }
+    }
 };
 
 int main()
 {
 
     Node *root = NULL;
-    binarySreachTree bst;
+    binarySearchTree bst;
 
     bst.insertNode(root);
+    cout << "Level Order: ";
     bst.display(root);
     cout << endl;
+    cout << "Inorder: ";
     bst.inorder(root);
     cout << endl;
+    cout << "Preorder: ";
     bst.preorder(root);
     cout << endl;
+    cout << "PostOrder: ";
     bst.postorder(root);
+    cout << endl;
+    if (root)
+    {
+        Node *maxV = bst.maxVal(root);
+        Node *minV = bst.minVal(root);
+        cout << "Max Val: " << maxV->data << endl
+             << "Min Val: " << minV->data << endl;
+    }
+    bst.del(root);
+    cout << endl;
+    cout << "Level Order: ";
+    bst.display(root);
 
     return 0;
 }
