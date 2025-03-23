@@ -1,0 +1,9 @@
+In case of an array, for eg: arr = {1,2,3,4,5};
+cout<<arr will give address of the first element and 
+cout<<&arr[0] will give the same
+cout<<*arr and cout<<arr[0] will give the first element (0th index)
+cout<<*(arr + n) and arr[n] will give the (n+1)th element (nth index)
+
+
+Differences between array and pointers:
+ - 

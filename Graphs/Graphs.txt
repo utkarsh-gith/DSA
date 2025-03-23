@@ -1,0 +1,30 @@
+GRAPHS:
+ - data structure with combination of nodes and edges
+ - (ChatGPT)In C++, a graph is a non-linear data structure consisting of a set of nodes (vertices)
+   and a set of edges connecting these nodes. Graphs are used to represent relationships between 
+   pairs of objects. There are two common types of graphs: directed graphs (also called digraphs) 
+   and undirected graphs
+ - In a directed graph, edges have a direction, meaning they go from one node to another in a 
+   specific direction. In contrast, in an undirected graph, edges have no direction, meaning they 
+   simply connect two nodes without any inherent directionality
+ - node is an entity to store any type of data
+ - edge is the connection between nodes
+ - In undirected graph the degree of the node is the number of edges connected to the node
+ - In directed graph, in-degree is the number of incoming edges to the node and
+   out-degree is the number of edegs going out of the node
+ - A weighted graph is a type of graph in which each edge has an associated numerical value, 
+   called a weight
+ - A path in a graph is the sequence of edges between two nodes or vertices
+ - A cyclic graph is a type of graph that contains one or more cycles. In a cyclic graph, we can reach
+   the intial vertex without repetation of any vertex
+ - An acyclic graph is a graph that does not contain any cycles. In other words, there are no paths in 
+   the graph that start and end at the same vertex without repeating any vertices
+ 
+
+Representation:
+ - Adjacency Matrix: An adjacency matrix is a way to represent a graph where the rows and columns 
+   represent vertices, and the entries represent edges between vertices. For an undirected graph, 
+   the matrix is symmetric. For a directed graph, it might not be symmetric.
+ - Adjacency List: An adjacency list consists of an array of lists or vectors, where each element 
+   in the array represents a vertex in the graph, and the list or vector associated with each vertex 
+   contains the vertices adjacent to that vertex.

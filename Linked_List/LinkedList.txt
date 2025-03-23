@@ -1,0 +1,45 @@
+LINKED LIST:
+ - linear data structure containg collection of nodes
+ - each node contains data and a pointer pointing the next node
+ 
+ Advantages:
+  - dynamic data structure
+  - Can grow or shrink at run time, no mrmory wasted
+  - no shift of elements needed at time of deletion or insertion
+  - efficient for implementing other data structures like stacks, queues
+
+ Types:
+  - Singly Linked List
+   - contains a data element and a ponter pointing the next node
+   - class Node{
+        public:
+            int data;
+            Node *next;  
+     }; 
+  - Doubly Linked List
+   - contains a data element, a ponter pointing the next node and a
+     pointer pointing to the previous node
+   - class Node{
+        public:
+            int data;
+            Node *next;  
+            Node *prev; 
+     }; 
+  - Circular Linked List
+   - contains a data element and a ponter pointing the next node
+   - the last node points head 
+   - class Node{
+        public:
+            int data;
+            Node *next;  
+     }; 
+  - Circular Doubly Linked List
+   - contains a data element, a ponter pointing the next node and a
+     pointer pointing to the previous node
+   - the last node points the head
+   - class Node{
+        public:
+            int data;
+            Node *next;  
+            Node *prev; 
+     };

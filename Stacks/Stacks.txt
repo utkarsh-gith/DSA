@@ -1,0 +1,10 @@
+Stacks:
+LIFO - Last In First Out
+Operations: Push -> s.push(2);
+            Pop -> s.pop();
+            Peek/Top -> s.top();
+            Empty -> s.empty();
+            Size -> s.size();
+
+Initialisation: stack<data_type> stack_name;
+            Eg: srack<int> s

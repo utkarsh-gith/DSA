@@ -1,0 +1,29 @@
+Recursion
+ - function that calls itself directly or indirectly
+ - (ChatGPT) Recursion is a programming technique where a function calls
+   itself to solve smaller instances of the same problem. It breaks the 
+   problem into subproblems until reaching a base case, which doesn't require 
+   further recursion. Each recursive call works on a reduced version of the 
+   problem, eventually building up the solution as it unwinds. Recursion is 
+   useful for tasks like traversing trees, solving puzzles, or performing 
+   repeated actions. However, it requires careful design to avoid infinite 
+   loops and excessive memory use.
+
+ - one bigger problem's solution exists is dependent on same type of smaller 
+   problem, we will use recursion
+   e.g. 2^4 = 2 * 2^3
+        2^n = 2 * 2^(n-1)
+        F(n) = 2 * F(n-1) -> Recurrsive Relation
+
+ - In recursion, we have to write the base case and the recursive case
+
+ - Recursion Stack: This is the memory stack that stores information about each 
+   recursive function call, including local variables and return addresses. Each 
+   time a function calls itself, a new frame is pushed onto the stack, and when 
+   the base case is reached, the frames are popped off as the function returns.
+ - Recursion Tree: This is a visual representation of the recursive calls made 
+   by a function. Each node represents a function call, and the branches represent 
+   further recursive calls made by that function. The tree helps visualize how the 
+   problem is broken down step by step.
+
+   

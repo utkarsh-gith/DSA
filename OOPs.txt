@@ -1,0 +1,187 @@
+OBJECT ORRIENTED PROGRAMMING
+
+OBJECT:
+  - is an entity which has a state/properties and behaviour
+  - instance of a class
+  - For eg: In a hero: properties: health, level, name; behavior: attack(),defence(),dance(),sing();
+
+CLASS:
+  - defination: class class_name { 
+                    data memebers;
+                    member functions;
+                    };
+  - For eg: class student {
+                int roll no;
+                char name;
+                }
+            The size of the class is 5 bytes: (4+1)
+ - For eg: class home {
+                }
+            This is an empty class.
+            The size of the class is 1 byte because even when the class is empty it is allocated 1 byte for indentification or keeping track of it
+  - accessing data members of the class is done using dot operator
+
+ACCESS MODIFIERS:
+
+1.Public:
+  - can be accessed inside or outside the class
+2.Private:
+  - default: if any access modifiers are not mentioned, then it is private by default
+  - can be accessed only inside the class
+3.Protected:
+  - 
+
+
+GETTERS/SETTERS:
+  - these are functions in the class to get or set the values of the private data members as it cannot be accessed inside the class
+ - For eg: 
+
+
+#include<iostream>
+using namespace std;
+class student{
+    int roll;
+    string name;
+
+    public:
+        int getRoll(){              //Getter
+            return roll;
+        }
+        string getName(){           //Getter
+            return name;
+        }
+        void setRoll(int r){       //Setter
+            roll=r;
+        }
+        void setName(string n){   //Setter
+            name=n;
+        }
+};
+int main()
+{
+    student s;
+    int r;
+    string n;
+    cout<<endl<<"Enter name: ";
+    cin>>n;
+    cout<<"Enter roll: ";
+    cin>>r;
+    s.setName(n);
+    s.setRoll(r);
+    cout<<endl<<"Name: "<<s.getName()<<endl;
+    cout<<"Roll: "<<s.getRoll()<<endl;
+}
+
+
+DYNAMIC ALLOCATION OF CLASS:
+ - student *s = new student;
+ - accessing data members and member functions: *s.getRoll; (or) s->getRoll
+
+CONSTRUCTOR:
+ - is invoked at the time of object creation
+ - no return type
+ - no input parameters
+ - it is called by default 
+ - even if not created in the class, it is present
+ - For eg:
+
+#include<iostream>
+using namespace std;
+
+class student{
+    int roll;
+    string name;
+
+    public:
+        student(){
+            cout<<"Hello"<<endl;
+        }
+};
+int main()
+{
+    cout<<endl<<"Hi"<<endl;
+    student s;
+    cout<<"Hola"<<endl;
+    
+
+    return 0;
+}
+Output:
+Hi
+Hello
+Hola
+
+PARAMETERISED CONSTRUCTOR:
+
+#include<iostream>
+using namespace std;
+
+class student{
+    int roll;
+
+    public:
+        student(int roll){
+            this ->roll=roll; //this is used to store the address of the current object
+        }
+        int getRoll(){
+            return roll;
+        }
+};
+int main()
+{
+    student s(4);
+    cout<<endl<<"Roll ="<<s.getRoll()<<endl;
+    return 0;
+}
+
+Output:
+Roll =4
+
+COPY CONSTRUCTOR:
+ - copies the value from one object to another
+ - For eg; student s2(s1);
+ - it is already present, need not write it in the main class
+ - student( student & temp){
+       this->name = temp.name;
+       this->roll = temp.roll;
+       }
+
+SHALLOW COPY AND DEEP COPY:
+ - A shallow copy creates a new object but does not recursively copy the contents of the original object. Instead, 
+   it copies references to the memory locations of the original object's elements. As a result, both the original 
+   object and the shallow copy share the same underlying elements.
+ - In short, the shallow copy stores the pointers, so any change made in the first reflects in the second.
+
+ - A deep copy, on the other hand, creates a new object and recursively copies the contents of the original object.
+   This means that not only the top-level object but also all nested objects are duplicated. As a result, changes made
+   to the original object after the deep copy do not affect the copied object.
+ - In short, deep copy creates a copy of the obeject so that changes in any one of them do not reflect in the other
+
+ASSIGNMENT OPERATOR:
+ - the assignment operator used between two objects will lead to copying all the values of all the variables from the object
+   in the right to the object in the left
+
+DESTRUCTOR:
+ - used to deallocate memeory of the object at the end of the program
+ - on creation of class, destructor is also created automatically for statically allocated objects, can be also created manually
+ - for dynamically created objects, destructor has to be called manually , i.e., delete s;
+ - we use ~ in front of destructor to differentiate between constructor and destructor
+ - For eg: student() -> constructor , ~student() -> destructor
+
+
+ - to write functions outside the class or assgin values to data members outside the class, return_type class_name::memberfunction(){ };
+                                                                                            data_type class_name::datamember = 5;
+
+DATA ENCAPSULATION:
+ - (ChatGPT) Data encapsulation is a fundamental principle in object-oriented programming (OOP) that involves bundling the data (variables) 
+   and methods (functions) that operate on the data into a single unit, called a class. Encapsulation allows the implementation details of 
+   a class to be hidden from users of the class, promoting information hiding and reducing dependencies between different parts of a program.
+ - inforamtion/data hiding
+
+Fully Encapsulated class: All data members are private
+
+Advantages:
+ - Data hiding which increases security
+ - class can be made read only, no changes to data members
+ - Code reusability
+ - Unit testing 
