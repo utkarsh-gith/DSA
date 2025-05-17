@@ -1,0 +1,49 @@
+Tuples:
+ - ordered sequence
+ - written as comma separated elements within parantheses
+ - multiple data types can be in one Tuples
+ - every element in the tuple can be represented using its index starting with 0 from the first element
+   For eg: tuple1 = ('a',1,2,'3')
+     tuple1[0] will give 'a'
+     tuple1[1] will give 1
+     tuple1[2] will give 2
+     tuple1[3] will give '3'
+
+ - negative index
+     tuple1[-1] will give '3'
+     tuple1[-2] will give 2
+     tuple1[-3] will give 1
+     tuple1[-4] will give 'a'
+
+ - we can add two tupples (cannot subtract)
+     tuple2 = ('okay',4)
+     tuple1 + tuple2 will give ('a',1,2,'3','okay',4)
+     tuple1 + (6,7) will give ('a',1,2,'3',6,7)
+
+ - slicing
+    
+ - len command to get length of tupple
+ - tuple is immutable/unchangeable i.e. you cannot change the value of tuple using assignment Operator
+    tuple1[0] = 0 is invalid
+ - sort command to sor the tuple
+
+ - nesting
+    - tuples within tuples
+    For eg: tuple = ('a',(1,2,3),4,('b','c'))
+    
+    tuple[0] will give 'a'
+    tuple[1] will give (1,2,3)
+    tuple[2] will give 4
+    tuple[3] will give ('b','c')
+
+    tuple[1][0] will give 1
+    tuple[1][1] will give 2
+    tuple[1][2] will give 3
+
+    tuple[3][0] will give 'b'
+    tuple[3][2] will give 'c'
+
+    For eg: tuple3 = (('hello','hi'),('no','know'))
+
+    tuple3[0][0][0] will give 'h'
+     

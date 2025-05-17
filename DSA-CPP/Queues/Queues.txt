@@ -1,0 +1,3 @@
+Queues:
+ - FIFO i.e. First In First Out
+ -  

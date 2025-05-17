@@ -1,0 +1,51 @@
+Open:
+ - use open command
+ - For eg: file1 = open("/Users/utkarshpratapsingh/Programming/Python/Codes/example.txt","mode")
+            Here mode can be r,w,A
+
+After openeing the file:
+ - file1.name will give the name of the file
+ - file1.mode will give the mode of the file
+ - file1.close() to close the file
+
+Opening using with:
+ - with open("filepath","mode") as file1:
+     file_stuff = file1.read()
+     print(file_stuff)
+   print(file1.closed) //to check if file is closed
+   print(file_stuff)
+ 
+ - with open("filepath","mode") as file1:
+     file1stuff1 = file1.readline() // line 1
+     file1stuff2 = file1.readline() // line 2
+
+ - with open("filepath","mode") as file1:
+     for line in file1:
+      print(line)
+ 
+ - with open("filepath","mode") as file1:
+     file1stuff1 = file1.readline(5) // first 5 characters
+     file1stuff2 = file1.readline(10) // next 10 characters
+
+ In write mode, if the file is existing, it will be deleted and new one will be created
+ If no file exists, then new file will be created
+
+ - file1 = open("/Users/utkarshpratapsingh/Programming/Python/Codes/example.txt","w")
+   file1.write("Hello World!\nI am Utkarsh\nHave a good day")
+   file1.close()
+
+ - Line = "This is line 1\nThis is line 2\nThis is line 3"
+   with open("/Users/utkarshpratapsingh/Programming/Python/Codes/example.txt","w") as file1:
+    for line in Line:
+        file1.write(line)
+
+ In append mode:
+   if file exists, it appends the characters to the existing file
+   if file does not exist it creates a new file
+
+Copying contents of one file to another:
+
+ with open("/Users/utkarshpratapsingh/Programming/Python/Codes/example.txt","r") as readfile:
+    with open("/Users/utkarshpratapsingh/Programming/Python/Codes/example1.txt","w") as writefile:
+        for line in readfile:
+            writefile.write(line)

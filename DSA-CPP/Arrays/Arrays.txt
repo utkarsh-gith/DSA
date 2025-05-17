@@ -1,0 +1,41 @@
+ARRAYS:
+ - built in datatype
+ - used to store multiple values of single data type
+
+Advantages:
+ - stores data in sequential memory locations which can be accessed easily using index.
+ - elements of array can be accessed using index which makes operations like traversal amd upadation of time complexity O(1).
+ - simple syntax for declaration and initialisation
+
+Disadvantages:
+ - fixed size
+ - size must be known at compile time
+ - removing or adding elements requires shifting of existing elements
+ - insertions and deletions 
+
+Declaration:
+ - int arr[10];
+ - int arr[3]={2,3,4};
+ - int arr[100] = {0}; , this will initialise the whole array to 0
+ - if we have to initialise to any other value: two ways
+   - int arr[10]; , fill(arr,arr+10,3);
+   - #include<array> , array <int,10>arr; , arr.fill(5);
+ - here arr is the array with 10 memory block with arr pointing the address to the first block
+ - if the array has n memory blocks, the nindex starts from 0 to n-1 
+ - to access all elemnts of the array: for(int i=0;i<arr.size();i++)
+ 
+
+ - When we pass an array to the function and make changes to it in the function, then the changes are
+   made to the original array, not to a copy since we pass the address not the value
+
+
+2D Arrays:
+
+Declaration:
+ - int arr[10][10];
+ - input: - int a[2][4] = {1,2,3,4,5,6,7,8};
+          - int a[2][4] = {{1,2,3,4},{5,6,7,8}};
+          - for(int i=0;i<n;i++){ for(int j-0;j<n;j++){ cin>> a[i][j]}};
+ - output: for(int i=0;i<n;i++){ for(int j-0;j<n;j++){ cout<< a[i][j]}};
+ - while passing a 2D array to a function we need to specify the column index (WHY? click here-> https://stackoverflow.com/questions/12813494/why-do-we-need-to-specify-the-column-size-when-passing-a-2d-array-as-a-parameter)
+ 

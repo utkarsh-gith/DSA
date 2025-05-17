@@ -1,0 +1,48 @@
+Sets:
+ - type of collection like tuples and lists to input different data types
+ - sets do not record element position i.e. elements are unordered
+ - has unique elements i.e. only one of the particular element is present, any duplicates will be ignored
+ - Sets are defined within curly brackets {}
+
+ For eg: Set = { "Captain-America" , "Iron-Man" , "Hulk" , "Thor" , "Ant-Man" , "Hulk" , "Doctor-Strange" , "Spider-Man" }
+ Since "Hulk" is present two times, 
+ Set will become { "Captain-America" , "Iron-Man" , "Hulk" , "Thor" , "Ant-Man" , "Doctor-Strange" , "Spider-Man" }
+
+ To convert a list to set use function set();
+
+ For eg: For Eg: List = For Eg: L = ["Michael Jackson",1982,10.1,1982]
+ Set =set(List)
+ Set will give {"Michael Jackson",1982,10.1}
+
+ To add an element to the set use add() function
+ To remove an element from the set use remove() function
+ To verify if an element exists in the set use 'in' i.e. "Iron-Man" in Set will give True
+                                                         "Black-Panther" in Set will give False
+
+ Set Operations:
+
+   Set1 = { "Captain-America" , "Iron-Man" , "Hulk" , "Spider-Man" , "Captain-Marvel" }
+   Set2 = { "Iron-Man" , "Hulk" , "Thor" , "Ant-Man" , "Black-Panther"}
+   Set3 = { "Iron-Man" , "Hulk" }
+
+   - &
+    It gives the intersection of both the sets
+     Set4 = Set1 & Set2
+     Set4 : { "Iron-Man" , "Hulk" }
+
+   - union()
+     It gives the union of both the sets
+     Set4 = Set1.union(Set2)
+     Set4 : { "Captain-America" , "Iron-Man" , "Hulk" , "Spider-Man" , "Captain-Marvel" , "Thor" , "Ant-Man" , "Black-Panther" }
+
+   - issubset()
+     returns true if it is a subset and false if not a subset
+     Set3.issubset(Set1) gives True
+     Set2.issubset(Set1) gives False
+
+   - issuperset()   
+     returns true if it is a superset and false if not a superset
+     Set2.issuperset(Set1) gives False
+     Set2.issuperset(Set3) gives True
+   
+     

@@ -1,0 +1,36 @@
+Dynamic programming
+
+- solves complex problems by breaking them into simpler sub-problems
+
+Working:
+
+- Identify sub-problem: divide main problem in simpler and independent
+  problems
+- Store solution: solve each problem and store the solution in a table
+  or array
+- Build up solution: use the stored solution to build up the solution
+  to the main problem
+- Avoid redundency: by storing solution dp ensures that each sub-problem
+  is solved only once
+
+e.g.
+
+- In Fibonacci Series:
+  Fib(n) = Fib(n-1) + Fib(n-1)
+
+  - sub-problem: Fib(0), Fib(1), Fib(2) .... Fib(n)
+  - store solution: create an array to store the solution
+  - build up solution: find Fib(n-1) and Fib(n-1) to compute Fib(n)
+  - avoid redundency: every Fib(n) is calculated only once
+
+Approaches:
+
+- Top-down: Recursion + Memorisation
+- Bottom-up: Tabulation
+
+When to apply:
+Two conditions
+
+- if we can find the optimal solution of main problems using optimal solution
+  of smaller problems
+- overlapping sub-problems

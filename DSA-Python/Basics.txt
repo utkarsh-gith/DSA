@@ -1,0 +1,71 @@
+Data Types:
+ - int
+ - float
+ - string
+ - boolean
+
+Type Casting:
+ - type() function is used to check the data type
+ - integer -> float : float(2)
+ - float -> integer : int(1.1)
+ - string -> integer : int('1')
+ - string -> float : float('1.1')
+ - integer/float -> string : str(1.1)
+
+6/2 -> float
+6 // 2 -> integer, since // for integer division
+
+# Check the Python Version
+
+ import sys
+ print(sys.version)
+
+ [Tip:] sys is a built-in module that contains many system-specific parameters and functions, 
+ including the Python version in use. Before using it, we must explictly import it.
+
+# Practice on writing comments
+
+ print('Hello, Python!') # This line prints a string
+
+Strings:
+ 
+ For Eg: str1 = "Michael Jackson"
+
+ str1[0] = 'M'
+ str1[5] = 'e'
+ str1[7] = ' ' #(space)
+ str1[14] = 'n'
+
+ str[-1] = 'n'
+ str1[-8] = ' ' #(space)
+ str1[-10] = 'e'
+ str1[-15] = 'M'
+
+ str1[0:4] will give 'Mich'
+ str1[8:12] will give 'Jack'
+ str1[::2] will give 'MalJcsc' (every second character beginning from the zero index)
+ str1[0:7:3] will give 'Mhl' (every third character beginning from the zero index upto seventh index)
+ str1[4:12:5] will give 'aa' (every fifth character beginning from the fourth index upto twelth index)
+
+ str1 * 3 will give 'Michael JacksonMichael JacksonMichael Jackson'
+
+ str1 + "knows to dance!" will give 'Michael Jacksonknows to dance!'
+
+ \n -> given for new line
+ \t -> given for tab space
+
+ to give a backslash in the string use '\\' or use print(r' hello \ hi')
+  
+  str1.upper will give 'MICHAEL JACKSON' (all characters in upper case)
+  str1.lower will give 'michael jackson' (all characters in lower case)
+
+  str1.replace('Michael','James') will give 'James Jackson'
+
+  str1.find('el') = 5
+  str1.find('kkl') = -1
+
+f-String
+    used to print any data type in the print function without type conversion to string
+    Syntax: print(f"printable statement {variabke inside curly bracket}")
+    Eg. score=0
+        print(f"Your Score is {score}")  -> Your Score is 0

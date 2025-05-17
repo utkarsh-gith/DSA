@@ -1,0 +1,151 @@
+* To comment a line use # or command+/
+
+1. Print
+    To print a line use print("Whatever is needed to be printed")
+    Double quotes are used to show to start and end of the string
+    We can use single quotes instead of the double quotes
+    The type of quote used at the start is considered as start of the printable string
+    To combine two strings use a '+' sign. Eg: print("Hello " + "World") 
+    To print a new line use backslash n: '\n'
+
+2. Input
+    To input any value use input("Prompt")
+      The prompt will be printed before user gives the input
+    To use print with input: print("Hello " + input("What is your name\n") + "!")
+                     Output: What is your name?
+                             Utkarsh
+                             Hello Utkarsh!
+    To save the input in a variable: x = input("What is your name\n")
+
+3. len() 
+    used to find the length of the string
+    For eg: print(len("Hello World")) -> 11
+            print(len(input("What is your name?))) -> What is your name?Utkarsh
+                                                      7
+
+4. Data Types:
+    i) String - array of characters
+                written in double quotes
+                if we run - x = input("Enter your Phone number") -> The phone number will be stored as string
+                we can access each character of a string using sunscripts
+                    For eg: "Hello"[0]=H
+                            "World"[4]=d
+
+    ii) Integer - same defination as in mathematics
+                  x = 12345 or x=12_3_45 is the same
+                      underscore between the numbers is ignored
+                  if we execute: print(123+345) -> 468
+
+    iii) Float - Floating point numbers or Decimals
+                 12_34.56_78 is same as 1234.5678
+                 1234._5678 cannot be used or is invalid or is an error
+
+    iv) Boolean - True or False , 0 or 1
+
+5. type()
+    used to check the type of data; whether a n integer or float or string or any
+    For eg. x = 123
+            print(type(x))
+            Output -> <class 'int'>
+
+6. Type Casting/Conversion:
+    used to convert variables from one data type to another
+    syntax - variable_name = data_type(variable or data)
+    For eg: x = 123 -> y = str(x) or y = str(123)
+            both will give y = "123"
+
+7. Operations
+    i) Addition - +
+    ii) Subtraction - -
+    iii) Multiplication - *
+    iv) Division - / (default - float)
+    v) Exponent - ** Eg. [2 ** 3 = 8]
+    vi) Modulus - %
+    vii) Floor Division - // (Rounds of values to less than or equal to the nearest integer, changes type fro float to int)
+
+Note: round() is used to round decimals.
+        For eg: round(8/3)=3
+                round(8/3,2)=2.67
+
+Note: x += 1 is x = x + 1
+      x -= 1 is x = x - 1
+      x *= 1 is x = x * 1
+      x /= 1 is x = x / 1
+
+8. f-String
+    used to print any data type in the print function without type conversion to string
+    Syntax: print(f"printable statement {variabke inside curly bracket}")
+    Eg. score=0
+        print(f"Your Score is {score}")  -> Your Score is 0
+
+9. If loop
+    If cond:
+        if cond:
+            statement1
+        else:
+            statement2
+    elif cond:
+        if cond:
+            statement3
+        else:
+            statement4
+    else:
+        if cond:
+            statement5
+        else:
+            statement6
+
+        maintaining indentation is important.
+
+10. Random
+
+    used to generate random numbers
+    randint(a,b): returns a random interger between a and b (both inclusive)
+        Eg: import random
+            randon_int = tandom.randint(1,10)
+            printf(random_int)
+    random(): returns the next random integer between [0,1)
+              to expand the range multiply it with an integer.
+              For eg: random_float = random.random() * 5
+              This increases the range from [0,1) to [0,5)
+
+11. Lists
+    used to store multiple data using single variable
+    to print: print(Variable_name)
+    For eg: fruits = ["Mango" , "Pear" , "Apple" , "Banana" , "Grapes"]
+            fruits[0] = Mango
+            fruits[1] = Pear = fruits[-4]
+            fruits[2] = Apple = fruits[-3]
+            fruits[3] = Banana = fruits[-2]
+            fruits[4] = Grapes = fruits[-1]
+
+    To make changes in list assign the change to the particular index
+    For eg: fruits[2] = "Orange"
+
+    To add a data at the of the list: variable_name.append(data), variable_name.extend(data)
+    For eg: fruits.append("Pomegranate")
+            fruits.extend(["Pomegranate" , "Apple" , "Papaya"])
+
+    To add a data at index i: variable_name.insert(i,data)
+    For eg: fruits.insert(2,"Papaya")
+
+    To remove/delete a data: variable_name.remove(data)
+    For eg: fruits.remove("Apple")
+
+    To remove/delete a data from index i: variable_name.pop(i)
+    For eg: fruits.pop(0)    
+
+    To find the number of elements in the list: len(variable_name)
+    For Eg: len(fruits)
+
+    To combine two list: list3 = [list1, list2]
+    For eg: vegetables = ["Cucumber" , "Potato", "Onion" ]
+            Eatables = [fruits, vegetables]
+    Output: [['Mango', 'Pear', 'Apple', 'Banana', 'Grapes'], ['Cucumber', 'Potato', 'Onion']]
+            Eatable[1][1] = Potato
+
+
+
+    
+
+

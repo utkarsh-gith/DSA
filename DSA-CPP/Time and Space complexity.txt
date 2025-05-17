@@ -1,0 +1,13 @@
+Time Complexity:
+ - amount of time taken by an algorithm to work
+ - Big O -> upper bound
+ - Theta -> Average Case
+ - Omega -> lower bound
+
+ - Constant Time - O(1)
+ - Linear Time - O(n)
+ - Logarithmic Time - O(logn)
+ - Quadratic - O(n^2)
+ - Cubic - O(n^3)
+
+ - O(1) < O(logn) < O(n) < O(nlogn) < O(n^2) < O(n^3) < O(2^n) < O(n!)

@@ -1,0 +1,40 @@
+import pandas as pd //importing pandas library
+                    // use as statement to shorten the name of library
+
+csv_path = "file_path"
+
+df = pd.read_csv(csv_path) // df is the data frame
+df.head() gives the first five rows of the data frame
+
+it is similar for excel file_stuff
+xlsx_path = "file_path"
+df = pd.read_excel(xlsx_path)
+df.head()
+
+iloc (position based):
+ - used to acces the data in the data frame
+ For eg: df.iloc[0,0] will give the 0th column of the 0th rows
+
+loc (label based):
+ - used to acces the data in the data frame using the column name
+ For eg: df.loc[0,'name'] will give the name of the 0th row
+
+z = df.iloc[0:2, 0:3] will slice the data frame with two rows (o to 1) and three (0 to 2) columns
+z = df.loc[0:2, 'name':'address'] will slice the data frame with rows from 0 to 2 and columns from name till address
+
+ - unique() - to determine the unique elements 
+   For eg: df['name'].unique() will give all the unique names
+ 
+ - df1 = df[df['YearOfBirth']>2000] will assign df1 the data frames whose YoB is greater than 2000
+
+ - to save a file as csv: df1.to_csv('filename.csv')
+  
+  shape: Returns the dimensions (number of rows and columns) of the DataFrame.
+  info(): Provides a summary of the DataFrame, including data types and non-null counts.
+  describe(): Generates summary statistics for numerical columns.
+  head(), tail(): Displays the first or last n rows of the DataFrame.
+  mean(), sum(), min(), max(): Calculate summary statistics for columns.
+  sort_values(): Sort the DataFrame by one or more columns.
+  groupby(): Group data based on specific columns for aggregation.
+  fillna(), drop(), rename(): Handle missing values, drop columns, or rename columns.
+   apply(): Apply a function to each element, row, or column of the DataFrame.

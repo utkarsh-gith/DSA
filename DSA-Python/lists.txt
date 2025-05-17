@@ -1,0 +1,35 @@
+Lists:
+ - are also ordered sequence
+
+ - represented with square brackets
+   For Eg: L = ["Michael Jackson",1982,10.1,[1,2],('A',1)]
+
+ - lists unlike tuples are mutable/changable
+    For Eg: L[0] = "Ocean" will change L to ["Ocean",1982,10.1,[1,2],('A',1)]
+
+ - we can nest lists and tuples within lists
+ - indexing, negative indexing, slicing, nesting same as tuples
+ 
+ - extend is used to add elements at the end of the lists
+   For Eg: L1 = ["Michael Jackson",1982,10.1]
+   L1.extend(['pop',10]) will change L1 to ["Michael Jackson",1982,10.1,'pop',10]
+
+ - append is used to add single element at the end of the lists
+   L1.append(['pop',10]) will change L1 to ["Michael Jackson",1982,10.1,['pop',10]]
+
+ - del is used to delete element from the lists
+   L1.del(A[0]) will change L1 to [1982,10.1]
+
+ - split function used to split the lists
+   For eg: "blue ocean".split() will give ["blue","ocean"]
+           "a,b,c,d".split(",") will give ['a','b','c','d']
+
+ - Aliasing:
+   If L1 = ["Michael Jackson",1982,10.1]
+   and L2 = L1
+   then changing anything in L1 will change in L2 and vice-versa
+
+ - Cloning/Duplicating
+   If L1 = ["Michael Jackson",1982,10.1]
+   and L2 = L1[:]
+   L2 is a clone of L1 and are two separate lists

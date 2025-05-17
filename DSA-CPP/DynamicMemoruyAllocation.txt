@@ -1,0 +1,44 @@
+DYNAMIC MEMORUY ALLOCATION:
+
+Memeory:
+  1. Stack - memory allocated during compile time, static allocation
+           - memory size is allocated according to the program
+           - For eg: in case of array a[n], the array size is decided based on user, so the stack size allocated is less, so memory allocation for array
+                     becomes impoosible and crashes.This is the reason many most of the compilers do not allow initialisation of array in runtime.
+                     So only we have to declare array size before the compilation 
+  2. Heap - memory allocated during run time, bigger memory block than stack
+          - mostly used for dynamica memory allocation i.e. memory alloctaed during runtime
+          - to access Heap memory in C++, we use keyword "new"
+          - For eg: char *ch = new char;
+                    int *i = new int;
+          - To delete/free the allocated meomry : delete i; , detlete []arr;
+
+In char *ch= new char; , memory (8 bytes) of pointer ch is allocated in stack while the new character memory (1 byte) is assigned in heap
+In int *i = new int; , memory (8 bytes) of pointer i is allocated in stack while the new integer memory (8 bytes) is assigned in heap
+
+For creating array inside heap memory: int *arr = new int[5];
+In int *arr = new int[5]; , memory (8 bytes) of pointer arr is allocated in stack while the new integer stack memory (8 *5 = 40 bytes) is assigned in heap  
+
+Main Differences:
+1. Static: int arr[50]; -> 200 bytes
+   Dynamic: int arr = new int[50]; -> 200 + 8 =208 bytes
+2. Staic: while(true) { int a = 5; }
+          here only 4 bytes of memory is used since when the loop ends each time int a is set free.
+   Dynamic: while(true) { int a = new int; } 
+            here only 4 bytes of int a is releases while memory created in heap is not releases
+
+Implementation of 2D Array using Dynamic Memory Allocation:
+
+1. Creation:
+  int **arr = new int *[m];
+  for(i=0;i<m;i++)
+  {
+    int *arr[i] = new int[n];
+  }    
+
+2. Deleteion/Free:
+  for(i=0;i<m;i++)
+  {
+    delete [] arr[i];
+  }
+  delete [] arr;

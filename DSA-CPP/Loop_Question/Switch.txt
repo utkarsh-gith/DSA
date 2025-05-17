@@ -1,0 +1,19 @@
+Switch:
+  switch (ch):
+  {
+    case 1: statement1;
+            break;
+    case 2: statement2;
+            break;
+    case 'a': statement3;
+            break;
+    default: statement4;  //default is not a necessary condition
+  }
+
+  switch(ch) -> here ch can be a character or an integer. It cannot be a float or a string.
+
+  Suppose: while(1){
+                  switch() }
+            to exit such loop use exit();
+            to exit switch loop use break;
+            cannot use continue
